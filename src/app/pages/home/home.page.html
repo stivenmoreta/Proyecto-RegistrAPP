@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">DUOC <span>UC</span> </ion-title>
+  </ion-toolbar>
+</ion-header><br><br>
+
+
+<ion-content [fullscreen]="true">
+  <ion-title class="ion-padding-top ion-text-center">
+    
+    <ion-label>
+      <h1 class="animate__animated animate__bounce  animate__delay-1s">Bienvenido </h1>
+      <p>Sistema de asistencia</p>
+      <p *ngIf="usuario">Usuario: {{ usuario }}</p>
+    </ion-label>
+    <br>
+  </ion-title>
+  <ion-img class="img" src="../assets/img/codigo-qr.png">
+  </ion-img>
+  <a class="margen" (click)="lectorqr()">Scanear QR</a>
+  <br>
+  <ion-button shape="block"  (click)="foro()">Foro</ion-button><br>
+  <ion-button shape="block"  (click)="cerrar()">Cerrar Sesion</ion-button><br><br>
+
+</ion-content>

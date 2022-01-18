@@ -1,0 +1,60 @@
+ion-content {
+    --background:white;      
+   }
+  
+  ion-toolbar{
+    --background:#042e54;
+    }
+  
+  ion-card{
+    --background:white;
+  }
+  
+  ion-item{
+    --background:white;
+    ion-label{
+        color: black;
+    }  
+  }
+  ion-imput{
+    --color:black
+    ;
+    span{
+      color: black;
+    }
+  }
+  ion-button{
+    --background:#f7b512 ;
+  }
+  
+  p{
+    color: black;
+  }
+  
+  
+  ion-title{
+    color:#f7b512;
+    font-family: 'Libre Baskerville', serif;
+    font-size: x-large;
+    
+    span{
+        color: #fefefe;
+    }
+    }
+  .fondo-credencial{
+    background-color: #fefefe;
+  }
+  
+  .img{
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .margen{
+    display: block;
+    text-align: center;
+  }
+  
+  

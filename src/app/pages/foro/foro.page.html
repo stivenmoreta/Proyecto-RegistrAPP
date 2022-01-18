@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">DUOC <span>UC</span> </ion-title>
+  </ion-toolbar>
+
+</ion-header><br>
+
+<ion-content [fullscreen]="true">
+  <a id="topOfPage" href="#topOfPage"></a>
+  <!-- style="border:1px solid black; height: 70px; margin-top: -10px; padding: 3px;" -->
+
+  <ion-card>
+    <p id="username" *ngIf="nameuser">Usuario: {{ nameuser }}</p>
+  </ion-card>
+    
+
+
+  <ion-card style="display:none;">Seleccione usuario
+    <ion-item lines="none">
+      <span>
+        Publicador:&nbsp;
+      </span>
+      
+      <ion-select placeholder="Seleccione su usuario"
+          class="ion-float-right"
+          [(ngModel)]="selectedUserId"
+          (ngModelChange)="cambiarUsuario($event)">
+        <ion-select-option *ngFor="let u of usuarios" [value]="u.id">
+          {{u.name}}
+        </ion-select-option>
+      </ion-select>
+      
+    </ion-item>
+  </ion-card>
+  
+  <ion-card>
+
+    <ion-card-header>
+      <ion-title class="ion-padding-top ion-text-center" style="margin-top: -35px;">
+        <ion-label>
+          <br>
+          <h1 class="animate__animated animate__bounce  animate__delay-1s">Foro DUOC</h1>
+          <p>Ingresa tu opinion</p>
+        </ion-label>
+      </ion-title><br>
+
+      <ion-card-subtitle style="display:none;" class="publicacionSeleccionada ion-text-center" >{{publicacionSeleccionada}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-item style="font-family: 'Libre Baskerville'; font-size: 15px;">
+      <ion-label  position="floating">Titulo</ion-label>
+      <ion-input style="color: black;" [(ngModel)]="publicacion.title"></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label position="floating">Comentario</ion-label>
+      <ion-textarea style="color: black;" [(ngModel)]="publicacion.body"></ion-textarea>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-button shape="block" expand="block" (click)="limpiarPublicacion()">Limpiar</ion-button></ion-col>
+        <ion-col><ion-button shape="block" expand="block" (click)="guardarPublicacion()">Guardar</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card><br><br>
+  
+
+  <ion-card class="ion-padding-top ion-text-center animate__animated animate__bounce  animate__delay-1s">
+    <ion-card-title class="con-padding-top " style="color: white; background-color: #042e54; margin-top: -20px; font-family: 'Libre Baskerville'; height: 35px; padding: 5px; ">Comentarios recientes</ion-card-title>
+  </ion-card>
+
+  <ion-card *ngFor="let p of publicaciones.slice(0,5); let i=index; trackBy: getIdentificadorItemPublicacion">
+
+    <ion-card-header style="font-family: 'Libre Baskerville'; font-size: medium;">
+      <h6 style="font-family: 'Libre Baskerville'; font-size: medium; color: #f7b512;">(Publicación #{{p.id}}) {{p.name}}</h6>
+      <h4 style="font-family: 'Libre Baskerville'; font-size: medium; color: black;">{{p.title}}</h4>
+    </ion-card-header>
+  
+    <ion-card-content style="font-family: 'Libre Baskerville'; font-size: medium;">
+      {{p.body}}
+    </ion-card-content>
+
+    <ion-button (click)="editarPublicacion(p)">
+      <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="eliminarPublicacion(p)">
+      <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-button>
+
+  </ion-card>
+  <ion-button (click)="home()">
+    <ion-icon name="home-outline"></ion-icon>
+  </ion-button>
+
+</ion-content>
+

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">DUOC <span>UC</span> </ion-title>
+  </ion-toolbar>
+</ion-header><br><br>
+<ion-content [fullscreen]="true">
+  <ion-title class="ion-padding-top ion-text-center">
+    <ion-label>
+      <h1 class="animate__animated animate__bounce  animate__delay-1s">Registrar usuario</h1>
+    </ion-label>
+  </ion-title><br><br>
+
+  <div class="ion-padding-vertical">
+    <ion-card class="ion-text-center">
+      <ion-card-content>
+        <p>Datos personales</p>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input style="color: black;" type="text" [(ngModel)]="login.usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input style="color: black;" type="password" [(ngModel)]="login.password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Re-Password</ion-label>
+          <ion-input style="color: black;" type="password" [(ngModel)]="repassword"></ion-input>
+        </ion-item>
+      </ion-card-content>
+      <ion-button shape="block"  (click)="registrar()">Registrar</ion-button><br><br>
+
+
+
+    </ion-card>
+  </div>
+  
+
+</ion-content>
