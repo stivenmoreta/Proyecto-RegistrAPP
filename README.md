@@ -1,4 +1,4 @@
-App hibrida para registrar la asistencia del alumno mediante un codigo qr. incluye un foro usando consumiendo una api.
+App hibrida para registrar la asistencia del alumno mediante un codigo qr. incluye un foro consumiendo una api.
 
 Tecnologia:
 -Ionic
