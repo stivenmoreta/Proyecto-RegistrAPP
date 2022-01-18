@@ -6,5 +6,7 @@ Tecnologia:
 -html
 -css
 -Angular
+-SQlite
 -Consumo de api
 -Detector Qr
+
